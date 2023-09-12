@@ -1,0 +1,5 @@
+<meta>
+    <info author="Daniel" description ="car system" version="1.0" type="script"></info>
+    <script src="client.lua" type="client"/>
+    <script src="server.lua" type="server"/>
+</meta>
