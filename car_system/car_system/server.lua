@@ -14,15 +14,13 @@ function createVehicleCommand ( thePlayer, commandName, carModel )
     deletecar(thePlayer)
     local x, y, z = getElementPosition ( thePlayer )
     local rotationX, rotationY, rotationZ = getElementRotation( thePlayer )
-    spawnX = x + ( ( -math.sin ( math.rad ( rotationZ ) ) ) * distance) -- calculate the X position of the vehicle
-    spawnY = y + ( ( math.cos ( math.rad ( rotationZ ) ) ) * distance) -- calculate the Y position of the vehicle
+    spawnX = x + ( ( -math.sin ( math.rad ( rotationZ ) ) ) * distance)
+    spawnY = y + ( ( math.cos ( math.rad ( rotationZ ) ) ) * distance) 
 
 
     local spawnedVehicle = createVehicle ( tonumber ( carModel ), spawnX, spawnY, z+2)
-    -- Сохраняем информацию о созданном автомобиле для игрока
     setElementData(spawnedVehicle, "owner", thePlayer)
-    
-    -- Сохраняем информацию о созданном автомобиле для игрока
+
     carArray[thePlayer] = { vehicle = spawnedVehicle }
 
 
