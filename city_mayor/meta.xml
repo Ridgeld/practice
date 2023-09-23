@@ -1,0 +1,12 @@
+<meta>
+    <info author="Daniel" description ="mayor fraction" version="1.0" type="script"></info>
+    <script src="S_set_fraction_leader.lua" type="server"/>
+    <script src="S_set_fraction_worker.lua" type="server"/>
+    <script src="S_fraction_chat.lua" type="server"/>
+    <script src="S_kick_from_fraction.lua" type="server"/>
+    <script src="S_invite_to_fraction_show_window.lua" type="server"/>
+    <script src="S_accept_invite.lua" type="server"/>
+    <script src="S_get_player_by_id.lua" type="server"/>
+    <script src="C_user_interface.lua" type="client"/>
+    <script src="C_invite_window.lua" type="client"/>
+</meta>
