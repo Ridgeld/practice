@@ -1,0 +1,6 @@
+<meta>
+    <info author="Daniel" description ="set id on player join" version="1.0" type="script"></info>
+    <script src="c_draw_player_id.lua" type="client"/>
+    <script src="c_draw_players_ids.lua" type="client"/>
+    <script src="S_set_id_all_players.lua" type="server"/>
+</meta>
