@@ -1,5 +1,7 @@
 <meta>
     <info author="Daniel" description ="mayor fraction" version="1.0" type="script"></info>
+    <script src="S_add_fraction.lua" type="server"/>
+    <script src="SH_rangs.lua" type="shared"/>
     <script src="S_set_fraction_leader.lua" type="server"/>
     <script src="S_set_fraction_worker.lua" type="server"/>
     <script src="S_fraction_chat.lua" type="server"/>
