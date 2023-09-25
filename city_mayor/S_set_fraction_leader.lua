@@ -16,8 +16,10 @@ addCommandHandler( "set_player_fraction_leader", function ( thePlayer, commandNa
         outputChatBox( "Игрок с ID " .. player_id .. " не найден.", player, 255, 0, 0 )
         return
     end
+    local target_player_rang = getElementData( target_player, "rang" )
+    local target_player_fraction = getElementData( target_player, "fraction" )
 
-    if not fraction_id and  getElementData( target_player, "fraction" ) then
+    if not fraction_id and target_player_fraction then
         outputChatBox( "Игрок: " .. getPlayerName( target_player ) .. " покинул пост лидера фракции ", thePlayer, 0, 255, 0 )
         outputChatBox( "Вы были сняты с поста лидера фракции" .. getElementData( target_player, "fraction" ) .. "  ждем Вас снова!", target_player, 0, 255, 0 )
         setElementModel( target_player, 60 )
@@ -26,14 +28,14 @@ addCommandHandler( "set_player_fraction_leader", function ( thePlayer, commandNa
         return
     end
 
-    if not getElementData( target_player, "rang" ) and  not getElementData( target_player, "fraction" ) then 
+    if not target_player_rang and not target_player_fraction then 
         outputChatBox( "Игрок: " .. getPlayerName( target_player ) .. " стал лидером фракции: ".. fraction_id, thePlayer, 0, 255, 0 )
         outputChatBox( "Вы стали лидером фракции "..fraction_id.." , желаем удачи!", target_player, 0, 0, 255 )
         setElementModel( target_player, 68 )
-        setElementData( target_player, "rang", 2 )
+        setElementData( target_player, "rang", RANGS.second )
         setElementData( target_player, "fraction", fraction_id )
     else 
         outputChatBox( "Для повышения необходимо уволиться из организации!", target_player, 255, 0, 0 )
     end
-
+    local add_fraction = addFraction()
 end )
