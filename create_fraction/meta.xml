@@ -1,0 +1,5 @@
+<meta>
+    <info author="Daniel" description ="mayor fraction" version="1.0" type="script"></info>
+    <script src="S_create_fraction.lua" type="server"/>
+    <export function="CreateFraction" type="server"/>
+</meta>
