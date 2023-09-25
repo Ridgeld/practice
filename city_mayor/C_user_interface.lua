@@ -1,6 +1,7 @@
 addEventHandler( "onClientKey", root, function ( button, press)
     if press and button == "p" then
-        if getElementData( localPlayer, "fraction") == "city_mayor" then
+        local player_fraction = getElementData( localPlayer, "fraction")
+        if player_fraction == "city_mayor" then
             if isElement( INVITE_PANEL ) then 
                 destroyElement( INVITE_PANEL )
                 showCursor( false )
@@ -26,7 +27,8 @@ addEventHandler( "onClientKey", root, function ( button, press)
                     end
                 end
                 -- Вкладка для лидера + кнопки
-                if getElementData( localPlayer, "rang" ) == 2 then
+                local player_rang = getElementData( localPlayer, "rang" )
+                if player_rang == 2 then
                     KICK_JOB = guiCreateButton( 0.75, 0.2, 0.2, 0.1, "Уволить", true, WINDOW )
                     INVITE = guiCreateButton( 0.75, 0.32, 0.2, 0.1, "Пригласить", true, WINDOW )
                     local tab_city = guiCreateTab( "Управление городом", tab_panel )  
