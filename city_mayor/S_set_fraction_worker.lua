@@ -16,7 +16,10 @@ addCommandHandler( "set_player_fraction", function ( thePlayer, commandName, pla
         outputChatBox( "Игрок с ID " .. player_id .. " не найден.", player, 255, 0, 0 )
         return
     end
-    if not fraction_id and getElementData( target_player, "fraction" ) then
+    local target_player_rang = getElementData( target_player, "rang" )
+    local target_player_fraction = getElementData( target_player, "fraction" )
+    
+    if not fraction_id and target_player_fraction then
         outputChatBox( "Игрок: " .. getPlayerName( target_player ) .. " был исключен из фракции", thePlayer, 0, 255, 0 )
         outputChatBox( "Вы были исключены из фракции, ждем Вас снова!", target_player, 0, 255, 0 )
         setElementModel( target_player, 60 )
@@ -25,11 +28,11 @@ addCommandHandler( "set_player_fraction", function ( thePlayer, commandName, pla
         return
     end
 
-    if not getElementData( target_player, "rang" ) and not getElementData( target_player, "fraction" ) then 
+    if not target_player_rang and not target_player_fraction then 
         outputChatBox( "Игрок: " .. getPlayerName( target_player ) .. " стал сотрудником фракции: ".. fraction_id, thePlayer, 0, 255, 0 )
         outputChatBox( "Вы были приняты во фракцию: ".. fraction_id .." , желаем удачи!", target_player, 0, 0, 255 )
         setElementModel( target_player, 57 )
-        setElementData( target_player, "rang", 1 )
+        setElementData( target_player, "rang", RANGS.first )
         setElementData( target_player, "fraction", fraction_id )
     else 
         outputChatBox( "Вы уже являетесь сотрудником фракции " .. getElementData(target_player, "fraction" ), target_player, 255, 0, 0 )
